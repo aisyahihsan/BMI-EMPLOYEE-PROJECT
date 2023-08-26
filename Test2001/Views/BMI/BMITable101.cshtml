@@ -1,0 +1,23 @@
+﻿<p><b>Body Mass Index Table</b></p>
+<table width="100%" border="1">
+    <tr align="center" style="font-weight:bold;">
+        <td>Weight \ Height</td>
+        @foreach (double height in ViewBag.Height)
+        {
+            <td>@height.ToString("0.00")</td>
+        }
+    </tr>
+
+    @for (int x = 0; x < ViewBag.Weight.Length; x++)
+    {
+        <tr align="center">
+            <td>@ViewBag.Weight[x]</td>
+            @for (int y = 0; y < ViewBag.Height.Length; y++)
+            {
+                <td>
+                    @ViewBag.BMI[x, y]
+                </td>
+            }
+        </tr>
+    }
+</table>

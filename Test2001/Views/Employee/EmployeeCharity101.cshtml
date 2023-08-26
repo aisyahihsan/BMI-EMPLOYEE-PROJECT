@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Test2001.Models.Employee101>
+
+<h3>Employee Salary & Charity Deduction </h3>
+
+<table border="1" width="100%">
+    <tr>
+        <th><b>Employee Id</b></th>
+        <th><b>Name</b></th>
+        <th><b>Position</b></th>
+        <th><b>Campus</b></th>
+        <th><b>Salary</b></th>
+        <th><b>Deduction</b></th>
+    </tr>
+
+    @{ int row = 1;} <!-- C# statement in razor code block -->
+
+    @foreach (var employee in ViewBag.OrderName)
+    {
+<tr>
+    <td>@employee.EmpId</td>
+    <td>@employee.Name</td>
+    <td>@employee.Position</td>
+    <td>@employee.Campus</td>
+    <td>@employee.Salary.ToString("c")</td>
+    <td>@employee.Deduction.ToString("c")</td>
+</tr>
+        row++;
+    }
+</table>
+<p>
+    <label>Number of employee is</label>
+    @ViewBag.CountAll
+</p>
+<p>
+    <label>Highest salary is</label>
+    @ViewBag.HighSalary.ToString("c")
+</p>
+<p>
+    <label>Lowest salary is</label>
+    @ViewBag.LowSalary.ToString("c")
+</p>
+<p>
+    <label>Average salary is</label>
+    @ViewBag.AverageSalary.ToString("c")
+</p>
+<p>
+    <label>Average salary MIIT is</label>
+    @ViewBag.AverageSalaryMIIT.ToString("c")
+</p>
+
+
